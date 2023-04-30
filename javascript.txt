@@ -1,0 +1,132 @@
+**************************************************************************
+
+1 call nima?
+	Bu funksiya methodi. Bunda biz
+
+	const userinfo = {
+		name: "Mashrab"
+		const fullname = function(age) {
+			return this.name
+		}
+	}
+
+	const name = {
+		name: "Ali"
+	}
+
+	userinfo.fullname.call(name, 19)
+	userinfo.fullname.bind(name)("19")
+	userinfo.fullname.apply(name, [19])
+
+******************************JavaScript****************************
+1 Data typelar necha turga bo'linadi?
+	Data typelarni 2 turi mavjud. Bular Primitive va References typelar.
+
+2 Primitive data typega nimalar kiradi?
+	Primitive data typelarga
+		1 String // "Tohir"
+		2 Number // 20
+		3 Boolean // True or False
+		4 BigInt // Katta sonlar uchun
+		5 Null // qiymati ataylab bo'sh qoldirilgan. Tayinlangan type ham deyiladi. ildiz bor lekin qiymat yo'q
+		6 Undefined // qiymati hali aniqlanmagan. qiymatga undefined tayinlaymiz lekin qiymat hali aniqmas. ildiz ham qiymat ham yo'q
+		7 Symbol // bir xil qiymatlarni unique qilib qo'yish yani bir xil qiymatni bir biriga tengmas deb qo'yadi.
+
+		  console.log(Symbol(a) == Symbol(b)); // false qiymati teng emas
+		  console.log(Symbol(a) === Symbol(b)); // false type teng lekin qiymat teng emas
+
+3 Reference data typega nimalar kiradi?
+	Reference data typega Object kiradi. Object ichida esa, Function, Array, Object kiradi.
+
+4 Primitive data type bilan Reference data type farqi nimada?
+	Primitive data typelarda faqat bitta qiymat saqlanadi va ular to'g'ridan to'g'ri xotirada (Stack) saqlanadi. Reference data type esa turli xil va ko'p ma'lumotlarni o'zida saqlashi va reference data typelar nomi xotirada (Stackda) saqlanadi, heapda esa u typelarni #000, #001, #002 qilib manzil sifatida saqlanadi.
+
+	let myObj = {name: "Ali"}
+	let name = "Ali"
+	let myObj2 = myObj
+
+5 Javascriptda o'zgaruvchilar necha xil usulda e'lon qilinadi?
+	Javascriptda o'zgaruvchilarni 4 xil usulda e'lon qilishimiz mumkin.
+		1) var
+		2) let
+		3) const
+		4) Hech narsa bilan
+6 let va var farqi nimada?
+	let hoistinga uchramaydi va u ES6 (2015-yilidan keyin) dan keyin yaratilgan. var esa hoistinga uchraydi va javascript yaralganda faqat vardan foydalanishgan.
+7 let va const farqi?
+	letda o'zgaruvchan qiymatlar bersak bo'ladi, ya'ni letdagi o'zgaruvchini qiymatini keyinchalik o'zgartirib ketsak bo'ladi. constda esa keyinchalik qiymatni o'zgartirib bo'lmaydi.
+8 Qanaqa javascript operatorlar mavjud?
+	1-Arifmetik operatorlar
+		+, -, *, /, **, %, ++, --
+
+	2- Assignment Operators (Belgilash operatorlari)
+		=, +=, -=, *=, /=, %=, **
+	3- Comparison Operators (Taqqoslash operatorlari)
+		==, ===, !=, !==, >, <, >=, <=, ?
+	4- Logical Operators (Mantiqiy operatorlar)
+		&&, ||, !
+	5- Type Operators
+		typeof, instanceof
+
+9 == va === farqi nimada?
+	== bu ma'lumotni faqat qiymatini tekshiradi. === bu esa ma'lumotni ham qiymati ham type bilan tekshiradi.
+
+10 && "va" qachon to'xtaydi?
+	&& "va" false qiymat topguncha ishlaydi, va  o'sha falseni chiqarib beradi.
+		console.log(true && 1 && "salom" && false && 10) // false.  agar hammasi true bo'lsa eng oxirgi trueni chiqaradi
+
+11 Null bilan Undefined farqi?
+	Variablega qiymat bermasak bu undefined, null qiymat bersak bu null. Undefined hali qiymati aniqlanmagan, null esa qiymati ataylab bo'sh qoldirilgan. undefined tag tugi bilan yo'q. null esa o'zgaruvchisi bor qiymati bo'sh
+
+12 Type Conversion nima?
+	JavaScriptda typelarni bir turdan ikkinchi turga o'zgartirishimiz Type Conversion deyiladi.
+		Masalan Number("1")
+
+13 Type Coersion nima?
+	Type Coersion bu bir jarayonda javascript orqa tomonda aftomatik typeni o'zgartirishi Type Coersion deyiladi.
+
+14 Type Conversion Va Type Coersion farqi?
+
+	Type Conversion biz ma'lumotlarni bir typedan ikkinchi typega o'tkazishimiz Coersion esa biz emas JavaScript orqa tomonda ma'lumotlarni bir turda ikkinchi turga o'tkzaishi.
+
+	let age = 20
+
+	//conversion
+	console.log(age.toString()) // "20"
+
+	//coersion
+	console.log(age + "Salom") // "20Salom"
+
+15 Data type'larni Type Conversion orqali necha turga almashtirishimiz mumkin va ular qaysilar?
+	Data typelarni biz 3 ta typega o'girishimiz mumkin.
+		1 Stringa. String(123) // "123"
+		2 Numberga. Number("2") // 2
+		3 Booleanga. Boolean("Olma") // true
+
+16 Data type'larni String'ga oʻzgartirish yoʻllarini ko'rsating?
+	Sting(1)
+	1 + ""
+	1.toString()
+
+17 console ga javob nima chiqadi? let x = true + 1 console.log(x)
+	Bunda Booleanga number qo'shilgan vaqti Coersion hodisasi amalga oshadi va true ni 1 ga o'zgartirib oladi. Shunda let x = true + 1 => let x = 1 + 1 => 2
+
+18 console.log'ga javob nima chiqadi? let x = true + "1" console.log(x)
+	Javob: "true1"
+
+19 Necha xil variable (oʻzgaruvchilar) mavjud va ular qaysilar?
+	3 xil o'zgaruvchilar mavjud.
+		1 var
+		2 let
+		3 const
+
+20 let va const farqi nimada?
+	let'ni o'zgaruvchi ma'lumotlarda ishlatamiz. const ni esa o'zgarmas ma'lumotlarda ishlatamiz.
+	let va const ES6 dan keyin qo'shilgan
+
+21 let va var farqi nimada?
+	let o'zi e'lon qilingan qatordan pastda ishlataolamiz yani u hoistinga uchramaydi.
+	var ni esa o'zi e'lon qilingan qatordan yuqorida ishlatsak bo'ladi. Yani u hoistinga uchraydi.
+
+22 Hoisting nima?
+	Biror bir e'lon qilingan o'zgaruvchi yoki funksiyani o'zi e'lon qilingan qatordan yuqorida ishlataolishimiz hoisting deyiladi.
